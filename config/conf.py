@@ -1,11 +1,12 @@
 # -*- coding:utf-8 -*-
 
 mongo_db_target = {
-    "host": "172.16.215.2",
+    "host": "172.17.1.119",
     "port": 40042,
     "db": "crawl_data",
-    "username": "offline",
-    "password": "offline",
+    "auth_db": "admin",
+    "username": None,
+    "password": None,
 }
 
 # 新网页库
@@ -18,25 +19,27 @@ mongo_db_target = {
 # }
 #
 # 新网页库
-mongo_db_target_new = {
-    "host": "172.16.215.2",
-    "port": 40042,
-    "db": "crawl_data_new",
-    "username": "work",
-    "password": "haizhi",
-}
+# mongo_db_target_new = {
+#     "host": "172.17.1.119",
+#     "port": 40042,
+#     "db": "crawl_data_new",
+#     "auth_db": "admin",
+#     "username": None,
+#     "password": None,
+# }
 
 mongo_db_source = {
-    'host': '172.16.215.2',
+    'host': "172.17.1.119",
     'port': 40042,
     'db': 'company_data',
-    'username': 'work',
-    'password': 'haizhi'
+    "auth_db": "admin",
+    "username": None,
+    "password": None,
 }
 
 # 代理服务
 remote_proxy_conf = {
-    'host': '172.18.180.225',
+    'host': '112.74.163.187',
     'port': 9300,
 }
 

@@ -63,9 +63,9 @@ class GsxtBaseWorker(TaskBaseWorker):
         self.target_db.create_index(self.target_table, [("in_time", MongDb.ASCENDING)])
 
         # 列表页名称
-        self.target_db_new.create_index(self.target_table, [("search_name", MongDb.ASCENDING)])
+        # self.target_db_new.create_index(self.target_table, [("search_name", MongDb.ASCENDING)])
         # 入库时间建立索引
-        self.target_db_new.create_index(self.target_table, [("in_time", MongDb.ASCENDING)])
+        # self.target_db_new.create_index(self.target_table, [("in_time", MongDb.ASCENDING)])
 
         # 站点索引
         self.source_db.create_index(self.source_table, [('province', MongDb.ASCENDING)])
@@ -502,23 +502,23 @@ class GsxtBaseWorker(TaskBaseWorker):
     # 选择需要插入的数据库
     def choose_database(self, target_table, data_list):
         length = len(data_list)
-        data_list_old = []
-        data_list_new = []
+        # data_list_old = []
+        # data_list_new = []
 
-        for item in data_list:
-            _id = item.get('_id')
-            if _id is None:
-                self.log.error('没有_id信息')
-                continue
+        # for item in data_list:
+        #     _id = item.get('_id')
+        #     if _id is None:
+        #         self.log.error('没有_id信息')
+        #         continue
+        #
+        #     result = self.target_db.find_one(target_table, {'_id': _id}, ['_id'])
+        #     if result is None:
+        #         data_list_new.append(item)
+        #     else:
+        #         data_list_old.append(item)
 
-            result = self.target_db.find_one(target_table, {'_id': _id}, ['_id'])
-            if result is None:
-                data_list_new.append(item)
-            else:
-                data_list_old.append(item)
-
-        self.target_db.insert_batch_data(target_table, data_list_old)
-        self.target_db_new.insert_batch_data(target_table, data_list_new)
+        self.target_db.insert_batch_data(target_table, data_list)
+        # self.target_db_new.insert_batch_data(target_table, data_list_new)
 
         return length
 

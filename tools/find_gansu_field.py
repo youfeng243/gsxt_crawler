@@ -40,8 +40,8 @@ mongo_db_webpage_old = {
 
 log = Gsxtlogger('find_equity_field.log').get_logger()
 
-target_db_new = MongDb(mongo_db_webpage_new['host'], mongo_db_webpage_new['port'], mongo_db_webpage_new['db'],
-                       mongo_db_webpage_new['username'], mongo_db_webpage_new['password'], log=log)
+# target_db_new = MongDb(mongo_db_webpage_new['host'], mongo_db_webpage_new['port'], mongo_db_webpage_new['db'],
+#                        mongo_db_webpage_new['username'], mongo_db_webpage_new['password'], log=log)
 
 target_db_old = MongDb(mongo_db_webpage_old['host'], mongo_db_webpage_old['port'], mongo_db_webpage_old['db'],
                        mongo_db_webpage_old['username'], mongo_db_webpage_old['password'], log=log)
@@ -118,7 +118,7 @@ def find_task(db, which):
 
 def main():
     start_time = time.time()
-    find_task(target_db_new, 'new')
+    # find_task(target_db_new, 'new')
     find_task(target_db_old, 'old')
     end_time = time.time()
 

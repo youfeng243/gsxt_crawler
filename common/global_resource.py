@@ -3,7 +3,7 @@ import re
 import sys
 
 from common.mongo import MongDb
-from config.conf import mongo_db_target, mongo_db_source, mongo_db_target_new
+from config.conf import mongo_db_target, mongo_db_source
 from logger import Gsxtlogger
 
 # 判断是否是在debug模式下
@@ -36,9 +36,9 @@ target_db = MongDb(mongo_db_target['host'], mongo_db_target['port'], mongo_db_ta
                    mongo_db_target['password'], log=global_log)
 
 # 新网页库
-target_db_new = MongDb(mongo_db_target_new['host'], mongo_db_target_new['port'], mongo_db_target_new['db'],
-                       mongo_db_target_new['username'],
-                       mongo_db_target_new['password'], log=global_log)
+# target_db_new = MongDb(mongo_db_target_new['host'], mongo_db_target_new['port'], mongo_db_target_new['db'],
+#                        mongo_db_target_new['username'],
+#                        mongo_db_target_new['password'], log=global_log)
 
 # 搜索列表存储表
 source_db = MongDb(mongo_db_source['host'], mongo_db_source['port'], mongo_db_source['db'],

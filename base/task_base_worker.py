@@ -15,7 +15,7 @@ import requests
 from fake_useragent import UserAgent
 
 from common import util
-from common.global_resource import global_log, target_db, source_db, is_debug, target_db_new
+from common.global_resource import global_log, target_db, source_db, is_debug#, target_db_new
 from common.proxy_local import ProxyLocal
 from common.queue_mq_thread import MqQueueThread
 from config.conf import remote_proxy_conf, parse_mq_conf, report_mq_conf
@@ -107,7 +107,7 @@ class TaskBaseWorker(object):
         self.target_db = target_db
 
         # 新网页库
-        self.target_db_new = target_db_new
+        # self.target_db_new = target_db_new
 
         # 搜索列表存储表
         self.source_db = source_db
