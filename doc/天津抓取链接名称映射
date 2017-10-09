@@ -1,0 +1,19 @@
+
+出资信息: shareholderUrl
+post_data = {
+    draw:1
+    start:0
+    length:5
+}
+
+主要人员: keyPersonUrl
+
+分支机构: branchUrl
+
+清算信息: liquidationUrl
+
+变更信息: alterInfoUrl
+
+年报列表信息: anCheYearInfo
+
+股东信息: insInvinfoUrl

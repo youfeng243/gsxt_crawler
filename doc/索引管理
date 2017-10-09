@@ -1,0 +1,13 @@
+source_table:
+1. crawl_flag
+2. province
+
+target_table:
+1. seed
+2. province
+3. in_time
+
+search_table:
+1. crawl_flag
+2. in_time
+3. province

@@ -1,0 +1,32 @@
+#phantomjsrestart =  3600#seconds
+#phantomjs_num = 8
+#phantomjs_path='/home/work/env/phantomjs/bin/phantomjs'
+
+smart_proxy_url = 'http://112.74.163.187:23128/'
+
+# _type与目标extractor_id的对应关系
+[type_extractor_map]
+gongshang = 1545
+
+# 分布式汇报数据库配置
+[backend]
+host           =   'localhost'
+port            =   6379
+password        =   "haizhi@)"
+
+[local_server]
+name = 'downloader_smart'
+host = '127.0.0.1'
+port = 12210
+#server_thread_num = 150
+#server_process_num = 1
+process_thread_num = 100
+
+#beanstalk的配置
+[beanstalk_conf]
+host          =      'cs0.sz-internal.haizhi.com'    # 线上beanstalk内网IP
+port          =      11400      # 线上beanstalk内网port
+input_tube    =      'proxy_download_req'
+output_tube   =      'download_rsp'
+output_tube_scheduler =      'online_schedule_report'    # 给工商调度的反馈
+

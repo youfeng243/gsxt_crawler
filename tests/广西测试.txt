@@ -1,0 +1,1172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache"/>
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"/>
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"/>
+    <title>全国企业信用信息公示系统</title>
+    <link href="/css/public3.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="/js/ajax.js"></script>
+    <script type="text/javascript" src="/js/infoExpand.js"></script>
+	<script type="text/javascript">
+		function closephone(){
+			document.getElementById('sxphone').style.display='none';
+			document.getElementById('bgDiv').style.display='none';
+		}
+		function openphone(){
+			window.scrollTo(0,0);
+				var winWidth = 0;
+		        var winHeight = 0;
+		        if (window.innerWidth)
+		              winWidth = window.innerWidth;
+		        else if ((document.body) && (document.body.clientWidth))
+		              winWidth = document.body.clientWidth;
+		        //获取窗口高度
+		        if (window.innerHeight)
+		              winHeight = window.innerHeight;
+		        else if ((document.body) && (document.body.clientHeight))
+		              winHeight = document.body.clientHeight;
+		              
+			var sxphone=document.getElementById("sxphone");
+			if(sxphone){
+				sxphone.top="50%";
+				sxphone.left="50%";
+				 //获取窗口宽度
+				sxphone.style.display="";
+				document.getElementById('bgDiv').style.display='';
+			}
+			else{
+			 	var bgObj =document.createElement("div");
+			    bgObj.setAttribute('id','bgDiv');
+			    bgObj.style.position="absolute";
+			    bgObj.style.top="0";
+			    bgObj.style.background="#777";
+			    bgObj.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75";
+			    bgObj.style.opacity="0.6";
+			    bgObj.style.left="0";
+			    bgObj.style.width=winWidth + "px";
+			    bgObj.style.height=winHeight + "px";
+			    bgObj.style.zIndex = "1000";
+			    bgObj.style.MozOpacity="0.7";
+			    
+			    document.body.appendChild(bgObj);
+				var div = document.createElement("div");
+				//div.id="sxphone";
+				div.setAttribute('id','sxphone');
+				div.style.height="620px";
+				div.style.width="800px";
+				div.style.border="0px solid red";
+				div.style.position="absolute";
+				div.style.left="50%";
+				div.style.margin="-310px 0 0 -400px";
+				div.style.top="50%";
+				div.style.zIndex = "10001";
+				div.style.MozBorderRadius="5px";
+				div.style.webkitBorderRadius="5px";
+				div.style.borderRadius="5px";
+				div.style.background="#2D84B2";
+				div.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=100,finishOpacity=100";
+				div.style.padding="0";
+				  div.style.MozOpacity="1";
+				div.innerHTML = "<div style='font-weight: bold;color: #fff;height:20px;padding:5px 20px;font-size:14px'><img src='/js/skins/ZCMS/images/icon.gif'/>联系电话<span style='float:right;'>"+
+				"<a style='color:#fff;font-size:12px' href='javascript:closephone();' title='关闭'>关闭</a></span><div>"+
+					"<iframe id='phoneiframe' src='/sxphone.jspx' style='width:790px;height:585px;border:0px solid red;padding:0;margin:5px 10px -10px -15px'></iframe>";
+				document.body.appendChild(div);
+				var ua = navigator.userAgent;
+			    if (ua.lastIndexOf("MSIE 6.0") != -1) {
+			    	var phoneiframe=document.getElementById("phoneiframe");
+			    	//phoneiframe.style.width="840px";
+			    	phoneiframe.style.height="580px";
+			    	phoneiframe.style.marginRight="-15px";
+				}
+			}
+		}
+			function openphonehb(){
+			window.scrollTo(0,0);
+				var winWidth = 0;
+		        var winHeight = 0;
+		        if (window.innerWidth)
+		              winWidth = window.innerWidth;
+		        else if ((document.body) && (document.body.clientWidth))
+		              winWidth = document.body.clientWidth;
+		        //获取窗口高度
+		        if (window.innerHeight)
+		              winHeight = window.innerHeight;
+		        else if ((document.body) && (document.body.clientHeight))
+		              winHeight = document.body.clientHeight;
+		              
+			var sxphone=document.getElementById("sxphone");
+			if(sxphone){
+				sxphone.top="50%";
+				sxphone.left="50%";
+				 //获取窗口宽度
+				sxphone.style.display="";
+				document.getElementById('bgDiv').style.display='';
+			}
+			else{
+			 	var bgObj =document.createElement("div");
+			    bgObj.setAttribute('id','bgDiv');
+			    bgObj.style.position="absolute";
+			    bgObj.style.top="0";
+			    bgObj.style.background="#777";
+			    bgObj.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75";
+			    bgObj.style.opacity="0.6";
+			    bgObj.style.left="0";
+			    bgObj.style.width=winWidth + "px";
+			    bgObj.style.height=winHeight + "px";
+			    bgObj.style.zIndex = "1000";
+			    bgObj.style.MozOpacity="0.7";
+			    
+			    document.body.appendChild(bgObj);
+				var div = document.createElement("div");
+				//div.id="sxphone";
+				div.setAttribute('id','sxphone');
+				div.style.height="560px";
+				div.style.width="800px";
+				div.style.border="0px solid red";
+				div.style.position="absolute";
+				div.style.left="50%";
+				div.style.margin="-310px 0 0 -400px";
+				div.style.top="50%";
+				div.style.zIndex = "10001";
+				div.style.background="#ECEEEE";
+				div.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=100,finishOpacity=100";
+				div.style.padding="0";
+				  div.style.MozOpacity="1";
+				div.innerHTML = "<div style='font-weight: bold;color: #000;height:20px;padding:5px 20px;font-size:14px'>咨询电话<span style='float:right;'>"+
+				"<a style='color:#000;font-size:12px' href='javascript:closephone();' title='关闭'>关闭</a></span><div>"+
+				"<hr />"+
+					"<iframe id='phoneiframe' src='/hbphone.jspx' style='width:790px;height:505px;border:0px solid red;padding:0;margin:5px 10px -10px -15px'></iframe>";
+				document.body.appendChild(div);
+				var ua = navigator.userAgent;
+			    if (ua.lastIndexOf("MSIE 6.0") != -1) {
+			    	var phoneiframe=document.getElementById("phoneiframe");
+			    	//phoneiframe.style.width="840px";
+			    	phoneiframe.style.height="580px";
+			    	phoneiframe.style.marginRight="-15px";
+				}
+			}
+		}
+	</script>
+    <script type="text/javascript">
+        function r1() {
+            document.getElementById('jibenxinxi').style.display = 'block';
+            document.getElementById('dongchandiya').style.display = 'none';
+            document.getElementById('jingyingyichangminglu').style.display = 'none';
+            document.getElementById('yanzhongweifaqiye').style.display = 'none';
+            document.getElementById('xingzhengchufa').style.display = 'none';
+            document.getElementById('chouchaxinxi').style.display = 'none';
+
+        }
+
+        function r4() {
+            document.getElementById('jibenxinxi').style.display = 'none';
+            document.getElementById('dongchandiya').style.display = 'block';
+            document.getElementById('jingyingyichangminglu').style.display = 'none';
+            document.getElementById('yanzhongweifaqiye').style.display = 'none';
+            document.getElementById('xingzhengchufa').style.display = 'none';
+            document.getElementById('chouchaxinxi').style.display = 'none';
+        }
+        function r5() {
+            document.getElementById('jibenxinxi').style.display = 'none';
+            document.getElementById('dongchandiya').style.display = 'none';
+            document.getElementById('jingyingyichangminglu').style.display = 'block';
+            document.getElementById('yanzhongweifaqiye').style.display = 'none';
+            document.getElementById('xingzhengchufa').style.display = 'none';
+            document.getElementById('chouchaxinxi').style.display = 'none';
+        }
+        function r6() {
+            document.getElementById('jibenxinxi').style.display = 'none';
+            document.getElementById('dongchandiya').style.display = 'none';
+            document.getElementById('jingyingyichangminglu').style.display = 'none';
+            document.getElementById('yanzhongweifaqiye').style.display = 'block';
+            document.getElementById('xingzhengchufa').style.display = 'none';
+            document.getElementById('chouchaxinxi').style.display = 'none';
+        }
+        function r7() {
+            document.getElementById('jibenxinxi').style.display = 'none';
+            document.getElementById('dongchandiya').style.display = 'none';
+            document.getElementById('jingyingyichangminglu').style.display = 'none';
+            document.getElementById('yanzhongweifaqiye').style.display = 'none';
+            document.getElementById('xingzhengchufa').style.display = 'block';
+            document.getElementById('chouchaxinxi').style.display = 'none';
+        }
+        function r8() {
+            document.getElementById('jibenxinxi').style.display = 'none';
+            document.getElementById('dongchandiya').style.display = 'none';
+            document.getElementById('jingyingyichangminglu').style.display = 'none';
+            document.getElementById('yanzhongweifaqiye').style.display = 'none';
+            document.getElementById('xingzhengchufa').style.display = 'none';
+            document.getElementById('chouchaxinxi').style.display = 'block';
+        }
+
+        function togo(str) {
+            if (str == '1') {
+                window.location = '/businessPublicity.jspx?id=D2F47FB70124907DE5DF9705AAF2CC08';
+            } else if (str == '2') {
+                window.location = '/enterprisePublicity.jspx?id=D2F47FB70124907DE5DF9705AAF2CC08';
+            }else if (str == '3') {
+                window.location = '/otherDepartment.jspx?id=D2F47FB70124907DE5DF9705AAF2CC08';
+            }
+        }
+
+    </script>
+
+    <script type="text/javascript" defer="defer">
+        function changeStyle(divId, ele) {
+            var liAry = document.getElementById(divId).getElementsByTagName("li");
+            var liLen = liAry.length;
+            var liID = ele.id;
+            for (var i = 0; i < liLen; i++) {
+                if (liAry[i].id == liID) {
+                    liAry[i].className = "current";
+
+                }
+                else {
+                    liAry[i].className = "";
+                }
+            }
+        }
+
+        function ShowSpan(obj, n) {
+            var span = obj.parentNode.getElementsByTagName("tabs");
+            for (var i = 0; i < span.length; i++) {
+                span[i].className = "current";
+            }
+            span[n].className = "";
+            var li = obj.parentNode.getElementsByTagName("li")
+            li[n].className = "current";
+            for (var i = 0; i < li.length; i++) {
+                if (i != n) {
+                    li[i].className = "";
+                }
+                li[i].onmouseout = function () {
+                    this.className = "current";
+                }
+            }
+        }
+          function changeTab() {
+                var sourType = "3";
+                   if (sourType == "1") {
+                    r5();
+                    var tab = document.getElementById("5");
+                    changeStyle('tabs',tab);
+                  } else if (sourType == "2") {
+                    r6();
+                    var tab = document.getElementById("6");
+                    changeStyle('tabs',tab);
+                  } else if (sourType == "3") {
+                    r8();
+                    var tab = document.getElementById("8");
+                    changeStyle('tabs',tab);
+                  }
+        }
+        window.onload = function() {
+              changeTab();
+        }
+    </script>
+
+</head>
+<style type="text/css">
+    th,td{word-break:break-all;}
+  .top{width:990px; height:124px; background:url("/images/guangxi.png") no-repeat; }
+  .banqun{width:990px; height:59px; bottom:0; background:url("/images/ban-bj.png") repeat-x  ; padding-top:20px;font-size:14px; text-align:center; margin:0 auto;color:#fff;font-family:"微软雅黑";clear:both;}
+</style>
+
+<body>
+<div id="header">
+    <div class="top">
+        <div class="top-a">
+		<a href="http://gsxt.saic.gov.cn"  style="font-size:14px ; font-family:'微软雅黑'">全国首页</a>&nbsp;&nbsp;<a href="/search.jspx"  
+		style="font-size:14px ; font-family:'微软雅黑'">地方局首页</a>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+
+<div id="details" class="clear" style="height:930px">
+
+    <h2 >
+        中国移动通信集团广西有限公司宁明分公司东安营业厅 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 统一社会信用代码/注册号：451400400001219&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
+    </h2>
+
+<br/>
+
+<div id="leftTabs">
+    <ul>
+        <li class="current" style="margin-bottom:2px;"><p>工<br/>商<br/>公<br/>示<br/>信<br/>息</p></li>
+        <li onclick="togo('2')" style="margin-bottom:2px;"><p>企<br/>业<br/>公<br/>示<br/>信<br/>息</p></li>
+        <li onclick="togo('3')" style="margin-bottom:2px;"><p>其<br/>他<br/>部<br/>门<br/>公<br/>示<br/>信<br/>息</p></li>
+    </ul>
+</div>
+<div id="detailsCon" style="height:900px">
+<div class="dConBox">
+<div class="tabs" id="tabs">
+    <ul>
+        <li id="1" class="current" onclick="r1(),changeStyle('tabs',this)">登记信息</li>
+        <li id="4" onclick="r4(),changeStyle('tabs',this)">动产抵押登记信息</li>
+        <li id="7" onclick="r7(),changeStyle('tabs',this)">行政处罚信息</li>
+        <li id="5" onclick="r5(),changeStyle('tabs',this)">经营异常信息</li>
+        <li id="6" onclick="r6(),changeStyle('tabs',this)">严重违法信息</li>
+        <li id="8" onclick="r8(),changeStyle('tabs',this)">抽查检查信息</li>
+    </ul>
+</div>
+
+<div id="jibenxinxi" style="height: 850px;width:930px;overflow: auto">
+</br>
+<table cellspacing="0" cellpadding="0" class="detailsList">
+    <tr>
+        <th colspan="4" style="text-align:center;">基本信息</th>
+    </tr>
+
+    <tr>
+        <th width="20%">统一社会信用代码/注册号</th>
+        <td width="30%"> 451400400001219 </td>
+        <th>名称</th>
+        <td width="30%">中国移动通信集团广西有限公司宁明分公司东安营业厅</td>
+    </tr>
+    <tr>
+        <th>类型</th>
+        <td>股份有限公司分公司(上市、外商投资企业投资)</td>
+        <th width="20%">负责人</th>
+        <td>陆雄兵</td>
+    </tr>
+    <tr>
+        <th>营业场所</th>
+        <td>宁明县农村信用合作社东安营业部一楼</td>
+    </tr>  
+    <tr>
+        <th>营业期限自</th>
+        <td>
+                2010年3月22日
+        </td>
+        <th>营业期限至</th>
+        <td>
+                2050年12月26日
+        </td>
+    </tr>
+    <tr>
+        <th>经营范围<br/></th>
+        <td colspan="3">
+            基础电信业务、增值电信业务（按许可证核定的范围、有效期开展经营活动）；从事通信、IP电话和互联网等网络的设计、投资和建设；通信、IP电话和互联网等设施的安装、工程施工和维修；经营与通信、IP电话和互联网业务相关的系统集成、漫游结算清算、技术开发、技术服务、设备销售以及其他电信及信息服务，各类广告设计、制作，利用自有媒体发布各类广告，代理电视、广播、报刊、网络、手机、户外广告、印刷品、礼品的广告发布，出售、出租电话终端设备、IP电话设备、互联网设备及其零配件，并提供售后服务；计算机信息系统集成；商务代理服务；自有房屋租赁；通信信息咨询服务。
+
+        </td>
+    </tr>
+    <tr>
+        <th>登记机关</th>
+        <td>宁明县工商行政管理局</td>
+        <th>核准日期</th>
+        <td>
+                2014年7月9日
+        </td>
+    </tr>
+    <tr>
+        <th width="20%">成立日期</th>
+        <td>
+                2010年3月22日
+        </td>
+        <th>登记状态</th>
+        <td>存续</td>
+
+    </tr>
+
+</table>
+<br/>
+
+    <table cellpadding="0" cellspacing="0" class="detailsList">
+        <tr width="95%">
+            <th colspan="4" style="text-align:center;">变更信息</th>
+        </tr>
+        <tr width="95%">
+            <th width="15%" style="text-align:center;"> 变更事项</th>
+            <th width="25%" style="text-align:center;"> 变更前内容</th>
+            <th width="25%" style="text-align:center;"> 变更后内容</th>
+            <th width="10%" style="text-align:center;"> 变更日期</th>
+        </tr>
+    </table>
+    <div id="altDiv">
+        <table cellspacing="0" cellpadding="0" class="detailsList" id="altTab">
+                    <tr width="95%">
+                        <td width="15%">经营范围</td>
+                        <td width="25%">移动电话通信业务（包括话音、数据、多媒体等）ＩＰ电话及互联网接入服务；从事移动通信、ＩＰ电话和互联网等网络设计、投资和建设；移动通信ＩＰ电话和互联网等设施的安装、工程施工和维修；经营与移动通信ＩＰ电话和互联网业务相关的系统集成、漫游结算清算、技术开发、技术服务、设备销售等，出售、出租移动电话终端设备、ＩＰ电话设备、互联网设备及其零配件，并提供售后服务。</td>
+                        <td width="25%">基础电信业务、增值电信业务（按许可证核定的范围、有效期开展经营活动）；从事通信、IP电话和互联网等网络的设计、投资和建设；通信、IP电话和互联网等设施的安装、工程施工和维修；经营与通信、IP电话和互联网业务相关的系统集成、漫游结算清算、技术开发、技术服务、设备销售以及其他电信及信息服务，各类广告设计、制作，利用自有媒体发布各类广告，代理电视、广播、报刊、网络、手机、户外广告、印刷品、礼品的广告发布，出售、出租电话终端设备、IP电话设备、互联网设备及其零配件，并提供售后服务；计算机信息系统集成；商务代理服务；自有房屋租赁；通信信息咨询服务。</br></td>
+                        <td width="10%" style="text-align:center">
+                            2014年7月9日
+                        </td>
+                    </tr>
+        </table>
+    </div>
+            <table cellpadding="0" cellspacing="0" class="detailsList">
+                <th colspan="4" style="text-align:right;">
+                    <span style="color:blue"><<</span>
+                        &nbsp;<a id="aalt1" href='javascript:goPage3("alt",1);' style="text-decoration:none"><span id="spanalt1" style="color:red">1</span></a>
+                                                        &nbsp;<span style="color:blue">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </th>
+            </table>
+
+</div>
+
+
+
+<div id="dongchandiya" style="display:none ;height: 850px;width:930px;overflow: auto">
+    <br/>
+    <table cellpadding="0" cellspacing="0" class="detailsList">
+        <tr width="95%">
+            <th colspan="7" style="text-align:center;">动产抵押登记信息</th>
+        </tr>
+        <tr width="95%">
+            <th width="5%" style="text-align:center;">序号</th>
+            <th width="25%" style="text-align:center;">登记编号</th>
+            <th width="12%" style="text-align:center;">登记日期</th>
+            <th width="23%" style="text-align:center;">登记机关</th>
+            <th width="15%" style="text-align:center;">被担保债权数额</th>
+            <th width="10%" style="text-align:center;">状态</th>
+            <th width="10%" style="text-align:center;">详情</th>
+        </tr>
+    </table>
+
+    <div id="mortDiv">
+        <table cellpadding="0" cellspacing="0" class="detailsList">
+    </table>
+    </div>
+    <br/>
+</div>
+
+<div id="jingyingyichangminglu" style="display:none ;height: 850px;width:930px;overflow: auto">
+    <br/>
+    <table cellpadding="0" cellspacing="0" class="detailsList">
+        <tr width="95%">
+            <th colspan="9" style="text-align:center;">经营异常信息</th>
+        </tr>
+        <tr width="95%">
+            <th width="5%" style="text-align:center;">序号</th>
+            <th width="25%" style="text-align:center;">列入经营异常名录原因</th>
+            <th width="13%" style="text-align:center;">列入日期</th>
+            <th width="25%" style="text-align:center;">移出经营异常名录原因</th>
+            <th width="13%" style="text-align:center;">移出日期</th>
+            <th width="19%" style="text-align:center;">作出决定机关</th>
+        </tr>
+    </table>
+    <div id="excDiv">
+        <table cellspacing="0" cellpadding="0" class="detailsList" id="excTab">
+
+    </table>
+    </div>
+
+    <br/>
+</div>
+
+<div id="yanzhongweifaqiye" style="display:none;height: 850px;width:930px;overflow: auto">
+    <br/>
+    <table cellpadding="0" cellspacing="0" class="detailsList">
+        <tr width="95%">
+            <th colspan="9" style="text-align:center;">严重违法信息</th>
+        </tr>
+        <tr width="95%">
+            <th width="5%" style="text-align:center;">序号</th>
+            <th width="23%" style="text-align:center;">列入严重违法企业名单原因</th>
+            <th width="13%" style="text-align:center;">列入日期</th>
+            <th width="23%" style="text-align:center;">移出严重违法企业名单原因</th>
+            <th width="13%" style="text-align:center;">移出日期</th>
+            <th width="23%" style="text-align:center;">作出决定机关</th>
+        </tr>
+    </table>
+    <div id="serillDiv">
+    <table cellpadding="0" cellspacing="0" class="detailsList">
+     </table>
+     </div>
+    <br/>
+</div>
+
+<div id="xingzhengchufa" style="display:none;height: 850px;width:930px;overflow: auto">
+    <br/>
+    <table cellpadding="0" cellspacing="0" class="detailsList">
+        <tr width="95%">
+            <th colspan="7" style="text-align:center;">行政处罚信息</th>
+        </tr>
+        <tr width="95%">
+            <th width="5%"  style="text-align:center;">序号</th>
+            <th width="15%" style="text-align:center;">行政处罚<br>决定书文号</th>
+            <th width="20%" style="text-align:center;">违法行为类型</th>
+            <th width="18%" style="text-align:center;">行政处罚内容</th>
+            <th width="18%" style="text-align:center;">作出行政处罚<br>决定机关名称</th>
+            <th width="12%" style="text-align:center;">作出行政处罚<br>决定日期</th>
+            <th width="12%" style="text-align:center;">详情</th>
+
+        </tr>
+    </table>
+    <div id="punDiv">
+        <table cellspacing="0" cellpadding="0" class="detailsList" id="punTab">
+    </table>
+    </div>
+    <br/>
+</div>
+
+<div id="chouchaxinxi" style="display:none;height: 850px;width:930px;overflow: auto">
+    <br/>
+    <table cellpadding="0" cellspacing="0" class="detailsList">
+        <tr width="95%">
+            <th colspan="5" style="text-align:center;">抽查检查信息</th>
+        </tr>
+        <tr width="95%">
+            <th width="5%" style="text-align:center;">序号</th>
+            <th width="35%" style="text-align:center;">检查实施机关</th>
+            <th width="10%" style="text-align:center;">类型</th>
+            <th width="15%" style="text-align:center;">日期</th>
+            <th width="35%" style="text-align:center;">结果</th>
+        </tr>
+     </table>
+    <div id="spotCheckDiv">
+    <table cellpadding="0" cellspacing="0" class="detailsList">
+                <tr width="95%">
+                    <td width="5%" style="text-align:center;">1</td>
+                    <td width="35%">宁明县工商行政管理局</td>
+                    <td width="10%">
+                             抽查
+                    </td>
+                    <td width="15%" style="text-align:center">2015年11月6日</td>
+                    <td width="35%">正常</td>
+                </tr>
+    </table>
+    </div>
+            <table cellpadding="0" cellspacing="0" class="detailsList">
+                <th colspan="4" style="text-align:right;">
+                    <span style="color:blue"><<</span>
+                        &nbsp;<a id="aspotCheck1" href='javascript:goPage3("spotCheck",1);' style="text-decoration:none"><span id="spanspotCheck1" style="color:red">1</span></a>
+                                                        &nbsp;<span style="color:blue">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </th>
+            </table>
+
+    <br/>
+</div>
+
+</div>
+</div>
+</div>
+
+<br/> <br/>
+<div class="banqun">
+    版权所有：中华人民共和国国家工商行政管理局总局 <a target="_blank" style="color:#fff;text-decoration:underline;font-size:14px; " href="http://www.gxqyxygs.gov.cn/phone.jspx">广西信息公示咨询服务电话</a><br/>
+    地址：北京市西城区三里河东路八号  邮政编码：100820
+</div>
+</body>
+</html>
+<script>
+    var pageNo1 = 1;
+    var pageNo2 = 1;
+    var pageNo3 = 1;
+    var pageNo4 = 1;
+    var pageNo5 = 1;//行政处罚
+    var pageNo6 = 1;//经营异常
+    function goPage1(flag, n) {
+        var request = new ajax.Request();
+        pageNo1 = n;
+        setRed(flag, n);
+        if (flag != null && flag == 'mem') {
+            request.loadTextByGet("/QueryMemList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshMemList);
+        } else if (flag != null && flag == 'child') {
+            request.loadTextByGet("/QueryChildList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshChildList);
+        }else if (flag != null && flag == 'alt') {
+            request.loadTextByGet("/QueryAltList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshAltList);
+        } else {
+            request.loadTextByGet("/QueryInvList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshInvList);
+        }
+
+    }
+    function goPage2(flag, n) {
+        var request = new ajax.Request();
+        pageNo2 = n;
+        setRed(flag, n);
+        if (flag != null && flag == 'mem') {
+            request.loadTextByGet("/QueryMemList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshMemList);
+        } else if (flag != null && flag == 'child') {
+            request.loadTextByGet("/QueryChildList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshChildList);
+        }else if (flag != null && flag == 'alt') {
+            request.loadTextByGet("/QueryAltList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshAltList);
+        } else {
+            request.loadTextByGet("/QueryInvList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshInvList);
+        }
+
+    }
+    function goPage3(flag, n) {
+        var request = new ajax.Request();
+        pageNo3 = n;
+        setRed(flag, n);
+        if (flag != null && flag == 'mem') {
+            request.loadTextByGet("/QueryMemList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshMemList);
+        } else if (flag != null && flag == 'child') {
+            request.loadTextByGet("/QueryChildList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshChildList);
+        }else if (flag != null && flag == 'alt') {
+            request.loadTextByGet("/QueryAltList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshAltList);
+        }else if (flag != null && flag == 'serill') {
+            request.loadTextByGet("/QuerySerillList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshSerillList);
+        }else if (flag != null && flag == 'spotCheck') {
+            request.loadTextByGet("/QuerySpotCheckList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshSpotCheckList);
+        } else {
+            request.loadTextByGet("/QueryInvList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshInvList);
+        }
+
+    }
+    function slipFive(flag,lastMaxPage,totalPage,preOrNext) {
+        var tpage = '0';
+        var CurrentFirstPage ;
+        if(preOrNext=='next'){
+            if(lastMaxPage>=totalPage){
+                CurrentFirstPage = (Math.floor(totalPage/5))*5+1;
+            }else{
+                CurrentFirstPage = lastMaxPage + 1;
+            }
+        }else{
+            if(lastMaxPage<=5){
+                CurrentFirstPage = 1;
+            }else{
+                 if(lastMaxPage%5==0){
+                    CurrentFirstPage = lastMaxPage - 9;
+                }else{
+                    CurrentFirstPage = (Math.floor(lastMaxPage/5))*5 - 4;
+                }
+            }
+        }
+       	if (flag != null && flag == 'inv') {
+            tpage = '0';
+        } else if (flag != null && flag == 'mem') {
+            tpage = '1';
+        } else if (flag != null && flag == 'child') {
+            tpage = '0';
+        } else if (flag != null && flag == 'alt') {
+            tpage = '1';
+        }else if (flag != null && flag == 'pledge') {
+            tpage = '0';
+        }else if (flag != null && flag == 'mort') {
+            tpage = '0';
+        }else if (flag != null && flag == 'exc') {
+            tpage = '0';
+        }else if (flag != null && flag == 'serill') {
+            tpage = '0';
+        }else if (flag != null && flag == 'puun') {
+            tpage = '0';
+        }else if (flag != null && flag == 'spotCheck') {
+            tpage = '1';
+        }
+
+        goShowNextFive(flag, tpage,CurrentFirstPage,totalPage);
+    }
+    function goShowNextFive(flag, n,CurrentFirstPage,totalPage) {
+        var currentMaxPage = 0;
+        if((CurrentFirstPage+4)<totalPage){
+            currentMaxPage = CurrentFirstPage+4;
+        } else{
+            currentMaxPage = totalPage;
+        }
+        var request = new ajax.Request();
+        if (flag != null && flag == 'inv') {
+            var invPagination = document.getElementById("invPagination");
+            invPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"inv\","+currentMaxPage+",0,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"ainv"+i+"\" href='javascript:goPage3(\"inv\","+i+");'><span id=\"spaninv"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"inv\","+currentMaxPage+",0,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            invPagination.innerHTML= innerHTML;
+            goPage3("inv",CurrentFirstPage);
+        }else if (flag != null && flag == 'mem') {
+            var memPagination = document.getElementById("memPagination");
+            memPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"mem\","+currentMaxPage+",1,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"amem"+i+"\" href='javascript:goPage3(\"mem\","+i+");'><span id=\"spanmem"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"mem\","+currentMaxPage+",1,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            memPagination.innerHTML= innerHTML;
+            goPage3("mem",CurrentFirstPage);
+        } else if (flag != null && flag == 'child') {
+            var childPagination = document.getElementById("childPagination");
+            childPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"child\","+currentMaxPage+",0,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"achild"+i+"\" href='javascript:goPage3(\"child\","+i+");'><span id=\"spanchild"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"child\","+currentMaxPage+",0,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            childPagination.innerHTML= innerHTML;
+            goPage3("child",CurrentFirstPage);
+        }else if (flag != null && flag == 'alt') {
+            var altPagination = document.getElementById("altPagination");
+            altPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"alt\","+currentMaxPage+",1,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"aalt"+i+"\" href='javascript:goPage3(\"alt\","+i+");'><span id=\"spanalt"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"alt\","+currentMaxPage+",1,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            altPagination.innerHTML= innerHTML;
+            goPage3("alt",CurrentFirstPage);
+        }else if (flag != null && flag == 'pledge') {
+            var pledgePagination = document.getElementById("pledgePagination");
+            pledgePagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"pledge\","+currentMaxPage+",0,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"apledge"+i+"\" href='javascript:goPage9(\"pledge\","+i+");'><span id=\"spanpledge"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"pledge\","+currentMaxPage+",0,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            pledgePagination.innerHTML= innerHTML;
+            goPage9("pledge",CurrentFirstPage);
+        }else if (flag != null && flag == 'mort') {
+            var mortPagination = document.getElementById("mortPagination");
+            mortPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"mort\","+currentMaxPage+",0,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"amort"+i+"\" href='javascript:goPage10(\"mort\","+i+");'><span id=\"spanmort"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"mort\","+currentMaxPage+",0,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            mortPagination.innerHTML= innerHTML;
+            goPage10("mort",CurrentFirstPage);
+        }else if (flag != null && flag == 'exc') {
+            var excPagination = document.getElementById("excPagination");
+            excPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"exc\","+currentMaxPage+",0,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"aexc"+i+"\" href='javascript:goPage6(\"exc\","+i+");'><span id=\"spanexc"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"exc\","+currentMaxPage+",0,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            excPagination.innerHTML= innerHTML;
+            goPage6("exc",CurrentFirstPage);
+        }else if (flag != null && flag == 'serill') {
+            var serillPagination = document.getElementById("serillPagination");
+            serillPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"serill\","+currentMaxPage+",0,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"aserill"+i+"\" href='javascript:goPage3(\"serill\","+i+");'><span id=\"spanserill"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"serill\","+currentMaxPage+",0,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            serillPagination.innerHTML= innerHTML;
+            goPage3("serill",CurrentFirstPage);
+        }else if (flag != null && flag == 'pun') {
+            var punPagination = document.getElementById("punPagination");
+            punPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"pun\","+currentMaxPage+",0,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"apun"+i+"\" href='javascript:goPage5(\"pun\","+i+");'><span id=\"spanpun"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"pun\","+currentMaxPage+",0,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            punPagination.innerHTML= innerHTML;
+            goPage5("pun",CurrentFirstPage);
+        }else if (flag != null && flag == 'spotCheck') {
+            var spotCheckPagination = document.getElementById("spotCheckPagination");
+            spotCheckPagination.innerHTML='';
+            var innerHTML="<table cellpadding=\"0\" cellspacing=\"0\" class=\"detailsList\">"+
+                "<th colspan=\"4\" style=\"text-align:right;\">";
+            if(CurrentFirstPage==1){
+                innerHTML += "<span style=\"color:blue\"><<</span>";
+            }else{
+                innerHTML += "<span><a href='javascript:slipFive(\"spotCheck\","+currentMaxPage+",1,\"pre\");'><<</a></span>";
+            }
+            for(var i=CurrentFirstPage;i<=currentMaxPage;i++){
+                innerHTML += "    &nbsp;<a id=\"aspotCheck"+i+"\" href='javascript:goPage3(\"spotCheck\","+i+");'><span id=\"spanspotCheck"+i+"\">"+i+"</span></a>";
+            }
+            if(currentMaxPage==totalPage){
+                innerHTML += "&nbsp;&nbsp;<span style=\"color:blue\">>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }else{
+                innerHTML += "&nbsp;&nbsp;<a href='javascript:slipFive(\"spotCheck\","+currentMaxPage+",1,\"next\");'><span>>></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                        "</th>"+
+                        "</table>";
+            }
+            spotCheckPagination.innerHTML= innerHTML;
+            goPage3("spotCheck",CurrentFirstPage);
+        }
+
+    }
+    function goPage4(flag, n) {
+        var request = new ajax.Request();
+        pageNo4 = n;
+        setRed(flag, n);
+        if (flag != null && flag == 'mem') {
+            request.loadTextByGet("/QueryMemList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshMemList);
+        } else if (flag != null && flag == 'child') {
+            request.loadTextByGet("/QueryChildList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshChildList);
+        }else if (flag != null && flag == 'alt') {
+            request.loadTextByGet("/QueryAltList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshAltList);
+        } else {
+            request.loadTextByGet("/QueryInvList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08", refreshInvList);
+        }
+
+    }
+    function goPage5(flag, n) {
+        var request = new ajax.Request();
+        pageNo5 = n;
+        setRed(flag, n);
+        request.loadTextByGet("/QueryPunList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08&ran="+Math.random(), refreshPunList);
+    }
+
+    function goPage6(flag, n) {
+        var request = new ajax.Request();
+        pageNo6 = n;
+        setRed(flag, n);
+        request.loadTextByGet("/QueryExcList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08&ran="+Math.random(), refreshExcList);
+    }
+
+
+    function refreshInvList(message) {
+        var divTab = document.getElementById("invDiv");
+        divTab.innerHTML = '';
+        divTab.innerHTML = message.substr(1, message.length - 2);
+    }
+    function refreshMemList(message) {
+        var memDiv = document.getElementById("memDiv");
+        memDiv.innerHTML = '';
+        memDiv.innerHTML = message.substr(1, message.length - 2);
+    }
+    function refreshChildList(message) {
+        var childDiv = document.getElementById("childDiv");
+        childDiv.innerHTML = '';
+        childDiv.innerHTML = message.substr(1, message.length - 2);
+    }
+    function refreshAltList(message) {
+        var altDiv = document.getElementById("altDiv");
+        altDiv.innerHTML = '';
+        altDiv.innerHTML = message.substr(1, message.length - 2);
+        doExpand();
+    }
+    function refreshPunList(message) {
+        var punDiv = document.getElementById("punDiv");
+        punDiv.innerHTML = '';
+        punDiv.innerHTML = message.substr(1, message.length - 2);
+        doExpand_pun();
+    }
+    function refreshExcList(message) {
+        var excDiv = document.getElementById("excDiv");
+        excDiv.innerHTML = '';
+        excDiv.innerHTML = message.substr(1, message.length - 2);
+        doExpand_exc();
+    }
+    function refreshSerillList(message) {
+        var serillDiv = document.getElementById("serillDiv");
+        serillDiv.innerHTML = '';
+        serillDiv.innerHTML = message.substr(1, message.length - 2);
+    }
+    function refreshSpotCheckList(message) {
+        var spotCheckDiv = document.getElementById("spotCheckDiv");
+        spotCheckDiv.innerHTML = '';
+        spotCheckDiv.innerHTML = message.substr(1, message.length - 2);
+    }
+
+    function next1(flag) {
+        var tpage = '0';
+        if (flag != null && flag == 'mem') {
+            tpage = '1';
+        } else if (flag != null && flag == 'child') {
+            tpage = '0';
+        } else if (flag != null && flag == 'alt') {
+            tpage = '1';
+        }
+
+        goPage1(flag, tpage);
+    }
+    function next2(flag) {
+        var tpage = '0';
+        if (flag != null && flag == 'mem') {
+            tpage = '1';
+        } else if (flag != null && flag == 'child') {
+            tpage = '0';
+        } else if (flag != null && flag == 'alt') {
+            tpage = '1';
+        }
+
+        goPage2(flag, tpage);
+    }
+    function next3(flag) {
+        var tpage = '0';
+        if (flag != null && flag == 'mem') {
+            tpage = '1';
+        } else if (flag != null && flag == 'child') {
+            tpage = '0';
+        } else if (flag != null && flag == 'alt') {
+            tpage = '1';
+        }else if (flag != null && flag == 'serill') {
+            tpage = '0';
+        }else if (flag != null && flag == 'spotCheck') {
+            tpage = '1';
+        }
+
+        goPage3(flag, tpage);
+    }
+    function next4(flag) {
+        var tpage = '0';
+        if (flag != null && flag == 'mem') {
+            tpage = '1';
+        } else if (flag != null && flag == 'child') {
+            tpage = '0';
+        } else if (flag != null && flag == 'alt') {
+            tpage = '1';
+        }
+
+        goPage4(flag, tpage);
+    }
+    function next5(flag) {
+        var tpage = '0';
+        goPage5(flag, tpage);
+    }
+    function next6(flag) {
+        var tpage = '0';
+        goPage6(flag, tpage);
+    }
+
+
+
+    function pre1(flag) {
+        goPage1(flag, 1);
+    }
+    function pre2(flag) {
+        goPage2(flag, 1);
+    }
+    function pre3(flag) {
+        goPage3(flag, 1);
+    }
+    function pre4(flag) {
+        goPage4(flag, 1);
+    }
+    function pre5(flag) {
+        goPage5(flag, 1);
+    }
+    function pre6(flag) {
+        goPage6(flag, 1);
+    }
+
+    function setRed(flag, n) {
+        var currentFirstPage = Math.ceil(n/5)*5-4;
+        var tpage = '0';
+        if (flag != null && flag == 'inv') {
+            tpage = '0';
+        }else if (flag != null && flag == 'mem') {
+            tpage = '1';
+        } else if (flag != null && flag == 'child') {
+            tpage = '0';
+        } else if (flag != null && flag == 'alt') {
+            tpage = '1';
+        }else if (flag != null && flag == 'pun') {
+            tpage = '0';
+        }else if (flag != null && flag == 'exc') {
+            tpage = '0';
+        }else if (flag != null && flag == 'pledge') {
+            tpage = '0';
+        } else if (flag != null && flag == 'mort') {
+            tpage = '0';
+        }else if (flag != null && flag == 'serill') {
+            tpage = '0';
+        } else if (flag != null && flag == 'spotCheck') {
+            tpage = '1';
+        }
+
+        for (var i = currentFirstPage; i <= (currentFirstPage+4); i++) {
+            if(i>tpage){
+
+            }else{
+                document.getElementById("span" + flag + i).style.color = "";
+                document.getElementById("a" + flag + i).style.textDecoration = "underline";
+            }
+        }
+        document.getElementById("span" + flag + n).style.color = "red";
+        document.getElementById("a" + flag + n).style.textDecoration = "none";
+    }
+
+    var pageNo10 = 1;//动产抵押
+    function goPage10(flag, n) {
+        var request = new ajax.Request();
+        pageNo10 = n;
+        setRed(flag, n);
+        request.loadTextByGet("/QueryMortList.jspx?pno=" + n + "&mainId=D2F47FB70124907DE5DF9705AAF2CC08&ran=" + Math.random(), refreshMortList);
+    }
+
+    function next10(flag) {
+        var tpage = '0';
+        goPage10(flag, tpage);
+    }
+
+    function pre10(flag) {
+        goPage10(flag, 1);
+    }
+
+    function refreshMortList(message) {
+        var mortDiv = document.getElementById("mortDiv");
+        mortDiv.innerHTML = '';
+        mortDiv.innerHTML = message.substr(1, message.length - 2);
+    }
+    //显示更多
+    function showAlterMore(rowIndex,size){
+        var a = document.getElementById("a"+rowIndex);
+        var td = document.getElementById("td"+rowIndex);
+        var detailTd = document.getElementById("detailTd"+rowIndex);
+        var div = document.getElementById("xingzhengchufa");
+        var ele = document.getElementById("7");
+        var showDiv1 = document.getElementById("tr"+rowIndex+1);
+        if(showDiv1.style.display=="none"){
+            a.innerText="收起更多";
+            td.rowSpan=size+1;
+            detailTd.rowSpan=size+1;
+        }else{
+             a.innerText="更多";
+             td.rowSpan = 2;
+            detailTd.rowSpan=2;
+             changeStyle('tabs',ele);
+             if(div.style.display="block"){
+                div.style.display="";
+             }else{
+                 div.style.display="block";
+             }
+        }
+
+        for(var i=1;i<size;i++){
+            var showDiv = document.getElementById("tr"+rowIndex+i);
+            if(showDiv.style.display=="none"){
+                   showDiv.style.display="";
+                }else{
+                   showDiv.style.display="none";
+                }
+        }
+
+    }
+/*经营异常展开、缩起*/
+    var arr_excIn = new Array();
+    var arr_excOut = new Array();
+    /*展开内容*/
+/*变更信息展开、缩起*/
+    var arr_altBe = new Array();
+    var arr_altAf = new Array();
+    /*展开内容*/
+    doExpand();
+
+/*行政处罚 内容展开、收起*/
+    var arr_punBasis = new Array();
+    var arr_punResult = new Array();
+    var arr_punAlt = new Array();
+
+</script>

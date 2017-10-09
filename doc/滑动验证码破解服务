@@ -1,0 +1,17 @@
+http://sm5.sz-internal.haizhi.com:59876/api/crawl_scripts/gongshang
+{
+	"url": "http://jl.gsxt.gov.cn/",
+	"searchInputSelector": "#txtSearch",
+	"searchBtnSelector": "#btnSearch",
+	"searchText": "科技",
+	"resultIndicatorSelector": ".m-searchresult"
+}
+方法是POST，Content-Type要设为application/json
+
+
+0 是成功
+100 是破解成功但是resultIndicatorSelector没出现
+
+-100 是从控件图标来看破解成功，但是successIndicatorSelector没出现
+-101 是极验控件没出现。
+-102 是破解失败。

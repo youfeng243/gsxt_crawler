@@ -1,0 +1,24 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.log
+.DS_Store
+.idea/
+.idea/*
+/log/logapp/crawl_*
+base/__init__.pyc
+base/gsxt_base_worker.pyc
+common/__init__.pyc
+common/conf.pyc
+common/crawl_logger.pyc
+common/global_field.pyc
+common/mongo.pyc
+common/proxies.pyc
+task/__init__.pyc
+task/gsxt/__init__.pyc
+task/gsxt/gsxt_hunan_worker.pyc
+*.pyc
+"doc/~*.xlsx"
+*.jpg
+log/*.file
+/log/
+/logs/
+/config/proxies_200.txt

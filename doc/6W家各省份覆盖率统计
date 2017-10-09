@@ -1,0 +1,221 @@
+source_table = cmb_important_beijing
+target_table = cmb_important_beijing_new
+当前省份覆盖情况: province = beijing
+种子总数目: total = 2336
+抓取总数目: current = 2263
+覆盖率: 96.875%
+
+source_table = cmb_important_shandong
+target_table = cmb_important_shandong_new
+当前省份覆盖情况: province = shandong
+种子总数目: total = 4398
+抓取总数目: current = 4246
+覆盖率: 96.5438835834%
+
+source_table = cmb_important_hunan
+target_table = cmb_important_hunan_new
+当前省份覆盖情况: province = hunan
+种子总数目: total = 972
+抓取总数目: current = 936
+覆盖率: 96.2962962963%
+
+source_table = cmb_important_guangxi
+target_table = cmb_important_guangxi_new
+当前省份覆盖情况: province = guangxi
+种子总数目: total = 352
+抓取总数目: current = 345
+覆盖率: 98.0113636364%
+
+source_table = cmb_important_qinghai
+target_table = cmb_important_qinghai_new
+当前省份覆盖情况: province = qinghai
+种子总数目: total = 182
+抓取总数目: current = 182
+覆盖率: 100.0%
+
+source_table = cmb_important_jiangsu
+target_table = cmb_important_jiangsu_new
+当前省份覆盖情况: province = jiangsu
+种子总数目: total = 7756
+抓取总数目: current = 2708
+覆盖率: 34.91490459%
+
+source_table = cmb_important_ningxia
+target_table = cmb_important_ningxia_new
+当前省份覆盖情况: province = ningxia
+种子总数目: total = 192
+抓取总数目: current = 180
+覆盖率: 93.75%
+
+source_table = cmb_important_sichuan
+target_table = cmb_important_sichuan_new
+当前省份覆盖情况: province = sichuan
+种子总数目: total = 1733
+抓取总数目: current = 1673
+覆盖率: 96.5377957299%
+
+source_table = cmb_important_liaoning
+target_table = cmb_important_liaoning_new
+当前省份覆盖情况: province = liaoning
+种子总数目: total = 2106
+抓取总数目: current = 2062
+覆盖率: 97.9107312441%
+
+source_table = cmb_important_guangdong
+target_table = cmb_important_guangdong_new
+当前省份覆盖情况: province = guangdong
+种子总数目: total = 9985
+抓取总数目: current = 9587
+覆盖率: 96.0140210315%
+
+source_table = cmb_important_jilin
+target_table = cmb_important_jilin_new
+当前省份覆盖情况: province = jilin
+种子总数目: total = 549
+抓取总数目: current = 467
+覆盖率: 85.0637522769%
+
+source_table = cmb_important_shanxi
+target_table = cmb_important_shanxi_new
+当前省份覆盖情况: province = shanxi
+种子总数目: total = 975
+抓取总数目: current = 942
+覆盖率: 96.6153846154%
+
+source_table = cmb_important_anhui
+target_table = cmb_important_anhui_new
+当前省份覆盖情况: province = anhui
+种子总数目: total = 953
+抓取总数目: current = 924
+覆盖率: 96.9569779643%
+
+source_table = cmb_important_tianjin
+target_table = cmb_important_tianjin_new
+当前省份覆盖情况: province = tianjin
+种子总数目: total = 1014
+抓取总数目: current = 984
+覆盖率: 97.0414201183%
+
+source_table = cmb_important_shanghai
+target_table = cmb_important_shanghai_new
+当前省份覆盖情况: province = shanghai
+种子总数目: total = 3877
+抓取总数目: current = 3778
+覆盖率: 97.4464792365%
+
+source_table = cmb_important_xizang
+target_table = cmb_important_xizang_new
+当前省份覆盖情况: province = xizang
+种子总数目: total = 19
+抓取总数目: current = 19
+覆盖率: 100.0%
+
+source_table = cmb_important_gansu
+target_table = cmb_important_gansu_new
+当前省份覆盖情况: province = gansu
+种子总数目: total = 563
+抓取总数目: current = 546
+覆盖率: 96.9804618117%
+
+source_table = cmb_important_hebei
+target_table = cmb_important_hebei_new
+当前省份覆盖情况: province = hebei
+种子总数目: total = 650
+抓取总数目: current = 625
+覆盖率: 96.1538461538%
+
+source_table = cmb_important_hainan
+target_table = cmb_important_hainan_new
+当前省份覆盖情况: province = hainan
+种子总数目: total = 82
+抓取总数目: current = 75
+覆盖率: 91.4634146341%
+
+source_table = cmb_important_shanxicu
+target_table = cmb_important_shanxicu_new
+当前省份覆盖情况: province = shanxicu
+种子总数目: total = 550
+抓取总数目: current = 539
+覆盖率: 98.0%
+
+source_table = cmb_important_neimenggu
+target_table = cmb_important_neimenggu_new
+当前省份覆盖情况: province = neimenggu
+种子总数目: total = 456
+抓取总数目: current = 440
+覆盖率: 96.4912280702%
+
+source_table = cmb_important_yunnan
+target_table = cmb_important_yunnan_new
+当前省份覆盖情况: province = yunnan
+种子总数目: total = 697
+抓取总数目: current = 662
+覆盖率: 94.9784791966%
+
+source_table = cmb_important_hubei
+target_table = cmb_important_hubei_new
+当前省份覆盖情况: province = hubei
+种子总数目: total = 2583
+抓取总数目: current = 2512
+覆盖率: 97.2512582269%
+
+source_table = cmb_important_zhejiang
+target_table = cmb_important_zhejiang_new
+当前省份覆盖情况: province = zhejiang
+种子总数目: total = 7080
+抓取总数目: current = 6839
+覆盖率: 96.5960451977%
+
+source_table = cmb_important_heilongjiang
+target_table = cmb_important_heilongjiang_new
+当前省份覆盖情况: province = heilongjiang
+种子总数目: total = 583
+抓取总数目: current = 499
+覆盖率: 85.5917667238%
+
+source_table = cmb_important_chongqing
+target_table = cmb_important_chongqing_new
+当前省份覆盖情况: province = chongqing
+种子总数目: total = 924
+抓取总数目: current = 0
+覆盖率: 0.0%
+
+source_table = cmb_important_xinjiang
+target_table = cmb_important_xinjiang_new
+当前省份覆盖情况: province = xinjiang
+种子总数目: total = 456
+抓取总数目: current = 445
+覆盖率: 97.5877192982%
+
+source_table = cmb_important_henan
+target_table = cmb_important_henan_new
+当前省份覆盖情况: province = henan
+种子总数目: total = 1717
+抓取总数目: current = 1676
+覆盖率: 97.6121141526%
+
+source_table = cmb_important_guizhou
+target_table = cmb_important_guizhou_new
+当前省份覆盖情况: province = guizhou
+种子总数目: total = 435
+抓取总数目: current = 423
+覆盖率: 97.2413793103%
+
+source_table = cmb_important_fujian
+target_table = cmb_important_fujian_new
+当前省份覆盖情况: province = fujian
+种子总数目: total = 3203
+抓取总数目: current = 3147
+覆盖率: 98.2516390884%
+
+source_table = cmb_important_jiangxi
+target_table = cmb_important_jiangxi_new
+当前省份覆盖情况: province = jiangxi
+种子总数目: total = 1408
+抓取总数目: current = 1352
+覆盖率: 96.0227272727%
+
+全省份覆盖情况: 
+种子总数目: total = 58786
+抓取总数目: current = 51076
+覆盖率: 86.8846323955%

@@ -1,0 +1,117 @@
+﻿<table style="width:100%; id="t30" cellpadding="0" cellspacing="0" class="result-table">
+					<tr width="95%">
+					<td class="bg title"  class="bg title" colspan="6" style="text-align:center;">主要人员信息</td></tr>
+ <tr>
+					<td class="bg title"  style="width:10%;text-align:center">序号</td>
+					<td class="bg title"  style="width:20%;text-align:center">姓名</td>
+					<td class="bg title"  style="width:20%;text-align:center">职务</td>
+					<td class="bg title"  style="width:10%;text-align:center">序号</td>
+					<td class="bg title"  style="width:20%;text-align:center">姓名</td>
+					<td class="bg title"  style="width:20%;text-align:center">职务</td>
+					</tr>
+					
+										<tr>
+						<td class=""  width="10%" style="text-align:center;">1</td>
+						<td class=""  width="20%" style="text-align:center;">高峰</td>
+						<td class=""  width="20%" style="text-align:center;">董事</td>
+						<td class=""  width="10%" style="text-align:center;">2</td>
+						<td class=""  width="20%" style="text-align:center;">黄玉功</td>
+						<td class=""  width="20%" style="text-align:center;">董事</td>
+					</tr>
+					
+					
+					<tr>
+						<td class=""  width="10%" style="text-align:center;">3</td>
+						<td class=""  width="20%" style="text-align:center;">谭光明</td>
+						<td class=""  width="20%" style="text-align:center;">监事</td>
+						<td class=""  width="10%" style="text-align:center;">4</td>
+						<td class=""  width="20%" style="text-align:center;">王惠民</td>
+						<td class=""  width="20%" style="text-align:center;">董事</td>
+					</tr>
+					
+					
+					<tr>
+						<td class=""  width="10%" style="text-align:center;">5</td>
+						<td class=""  width="20%" style="text-align:center;">张祖刚</td>
+						<td class=""  width="20%" style="text-align:center;">监事</td>
+						<td class=""  width="10%" style="text-align:center;">6</td>
+						<td class=""  width="20%" style="text-align:center;">黄侃</td>
+						<td class=""  width="20%" style="text-align:center;">董事长</td>
+					</tr>
+					
+					
+					<tr>
+						<td class=""  width="10%" style="text-align:center;">7</td>
+						<td class=""  width="20%" style="text-align:center;">黄侃</td>
+						<td class=""  width="20%" style="text-align:center;">经理</td>
+						<td class=""  width="10%" style="text-align:center;">8</td>
+						<td class=""  width="20%" style="text-align:center;">熊光宇</td>
+						<td class=""  width="20%" style="text-align:center;">董事</td>
+					</tr>
+					
+					
+					<tr>
+						<td class=""  width="10%" style="text-align:center;">9</td>
+						<td class=""  width="20%" style="text-align:center;">戈延德</td>
+						<td class=""  width="20%" style="text-align:center;">董事</td>
+						<td class=""  width="10%" style="text-align:center;">10</td>
+						<td class=""  width="20%" style="text-align:center;">郝彤</td>
+						<td class=""  width="20%" style="text-align:center;">监事</td>
+					</tr>
+					
+					
+					<tr>
+						<td class=""  width="10%" style="text-align:center;">11</td>
+						<td class=""  width="20%" style="text-align:center;">王抗美</td>
+						<td class=""  width="20%" style="text-align:center;">监事</td>
+						<td class=""  width="10%" style="text-align:center;">12</td>
+						<td class=""  width="20%" style="text-align:center;">丁林生</td>
+						<td class=""  width="20%" style="text-align:center;">董事</td>
+					</tr>
+					
+					
+					<tr>
+						<td class=""  width="10%" style="text-align:center;">13</td>
+						<td class=""  width="20%" style="text-align:center;">刘焕虎</td>
+						<td class=""  width="20%" style="text-align:center;">监事会主席</td>
+					</tr>
+					
+					 
+				</table><table id="t31"   cellpadding="0" cellspacing="0" class="result-table"  >
+					<tr width="95%">
+					<td class="bg title"  colspan="4" style="text-align:center;">分支机构信息</td>
+				</tr>
+				<tr>
+					  <td class="bg title"  style="text-align:center;width:10%;">序号</td>
+					  <td class="bg title"  style="text-align:center;width:25%">注册号</td>
+					  <td class="bg title"  style="text-align:center;width:25%">名称</td>					  
+					  <td class="bg title"  style="text-align:center;width:20%">登记机关</td>
+					 </tr>
+   		<tr>
+			<td class=""  style="text-align:center;">1</td>
+			<td class=""  style="text-align:center;">120224000057628</td>
+			<td class=""  style="text-align:center;">天津南环铁路有限公司黄万运管分公司</td>
+			<td class=""  style="text-align:center;">天津市宝坻区市场和质量监督管理局</td>
+		</tr>
+		<tr>
+			<td class=""  style="text-align:center;">2</td>
+			<td class=""  style="text-align:center;">120224000057610</td>
+			<td class=""  style="text-align:center;">天津南环铁路有限公司机务分公司</td>
+			<td class=""  style="text-align:center;">天津市宝坻区市场和质量监督管理局</td>
+		</tr>
+</table>
+
+				<table id="t32"   cellpadding="0" cellspacing="0" class="result-table" >
+					<tr width="95%">
+					<td class="bg title"  colspan="5" style="text-align:center;">清算信息</td>
+				</tr>
+					<tr>
+					<td class="bg" style="width:20%">清算组负责人 </td>
+										<td class="" colspan="4" >无 </td>
+					</tr>
+					<tr>
+					<td class="bg"  rowspan="2">清算组成员 </td>
+					<td class="" colspan="4" >无 </td>
+					</tr>
+
+				</table>
