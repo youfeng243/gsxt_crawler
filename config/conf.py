@@ -50,7 +50,7 @@ NGINX_IP = '172.17.1.117'
 
 # 滑动验证码破解服务
 captcha_geetest_conf = {
-    'url': 'http://{}:3000/api/crawl_scripts/gongshang'.format(NGINX_IP)
+    'url': 'http://{}:59876/api/crawl_scripts/gongshang'.format(NGINX_IP)
 }
 
 # 江西 重庆加密服务
