@@ -51,7 +51,7 @@ remote_proxy_conf = {
 
 # 滑动验证码破解服务
 captcha_geetest_conf = {
-    'url': 'http://sm5.sz-internal.haizhi.com:59876/api/crawl_scripts/gongshang'
+    'url': 'http://172.17.1.121:3000/api/crawl_scripts/gongshang'
 }
 
 # 江西 重庆加密服务
