@@ -54,9 +54,9 @@ class GsxtZheJiangWorker(GsxtBaseWorker):
                 return param_list, self.SEARCH_ERROR
 
             # 这个IP已经被封禁
-            if util.judge_feature(content):
-                self.report_session_proxy(session)
-                return param_list, self.SEARCH_ERROR
+            # if util.judge_feature(content):
+            #     self.report_session_proxy(session)
+            #     return param_list, self.SEARCH_ERROR
 
             jq = PyQuery(content, parser='html')
 

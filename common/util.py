@@ -263,7 +263,6 @@ def get_url_param(url):
 def judge_feature(content):
     feature_list = ['val2.bangruitech.com',
                     'val.bangruitech.com',
-                    'bangruitech.com',
                     '请不要使用非法的URL地址访问',
                     '您正在试图非法攻击',
                     '您访问的URL地址不被允许']

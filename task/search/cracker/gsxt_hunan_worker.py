@@ -43,11 +43,6 @@ class GsxtHuNanWorker(GsxtBaseWorker):
             if content is None:
                 return param_list, self.SEARCH_ERROR
 
-            # 这个IP已经被封禁
-            if util.judge_feature(content):
-                self.report_session_proxy(session)
-                return param_list, self.SEARCH_ERROR
-
             jq = PyQuery(content, parser='html')
             if jq.find('div.contentA1').find('p').find('span').text() == '0':
                 return param_list, self.SEARCH_NOTHING_FIND
@@ -100,7 +95,7 @@ class GsxtHuNanWorker(GsxtBaseWorker):
                     if status is not None and status != '':
                         param['status'] = status
                     if seed_code is not None and seed_code.strip() != '':
-                        param['unified_social_credit_code'] = seed_code
+                        param['unified_social_credit_code'] = seed_code.strip()
 
                     param_list.append(param)
                 except Exception as e:
