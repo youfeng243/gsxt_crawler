@@ -21,6 +21,7 @@ class MongDb(object):
                 self.connected = self.db.authenticate(dbuser, dbpass)
             else:
                 self.connected = True
+            self.log.info("mongodb连接完成...")
         except Exception as e:
             self.log.error('{db} {port} {name} {user} {pwd}'.format(db=dbhost, port=dbport, name=dbname, user=dbuser,
                                                                     pwd=dbpass))
