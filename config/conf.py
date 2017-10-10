@@ -46,19 +46,21 @@ remote_proxy_conf = {
 #     'port': 9300,
 # }
 
+NGINX_IP = '172.17.1.121'
+
 # 滑动验证码破解服务
 captcha_geetest_conf = {
-    'url': 'http://172.17.1.121:3000/api/crawl_scripts/gongshang'
+    'url': 'http://{}:3000/api/crawl_scripts/gongshang'.format(NGINX_IP)
 }
 
 # 江西 重庆加密服务
 encry_jx_cq_conf = {
-    'url': 'http://cs4.sz-internal.haizhi.com:4000/api/run_script/gs_jx'
+    'url': 'http://{}:4000/api/run_script/gs_jx'.format(NGINX_IP)
 }
 
 # 浙江加密服务
 encry_zj_conf = {
-    'url': 'http://cs4.sz-internal.haizhi.com:4000/api/run_script/gs_zj'
+    'url': 'http://{}:4000/api/run_script/gs_zj'.format(NGINX_IP)
 }
 
 # 消息队列信息
