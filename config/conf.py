@@ -4,9 +4,8 @@ mongo_db_target = {
     "host": "172.17.1.119",
     "port": 40042,
     "db": "crawl_data",
-    "auth_db": "admin",
-    "username": None,
-    "password": None,
+    "username": 'work',
+    "password": 'haizhi',
 }
 
 # 新网页库
@@ -23,7 +22,6 @@ mongo_db_target = {
 #     "host": "172.17.1.119",
 #     "port": 40042,
 #     "db": "crawl_data_new",
-#     "auth_db": "admin",
 #     "username": None,
 #     "password": None,
 # }
@@ -32,9 +30,8 @@ mongo_db_source = {
     'host': "172.17.1.119",
     'port': 40042,
     'db': 'company_data',
-    "auth_db": "admin",
-    "username": None,
-    "password": None,
+    "username": 'work',
+    "password": 'haizhi',
 }
 
 # 代理服务

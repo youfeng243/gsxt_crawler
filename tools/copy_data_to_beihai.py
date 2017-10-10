@@ -28,9 +28,8 @@ mongo_db_target = {
     'host': "103.36.136.211",
     'port': 40042,
     'db': 'company_data',
-    "auth_db": "admin",
-    "username": None,
-    "password": None,
+    "username": 'work',
+    "password": 'haizhi',
 }
 
 log = Gsxtlogger('copy_data_to_beihai.log').get_logger()

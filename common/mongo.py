@@ -1,7 +1,28 @@
 # coding=utf-8
 import sys
+import time
 
 import pymongo
+from pymongo.errors import AutoReconnect
+
+
+# 重连mongo
+def auto_reconnect(retry_limit=30, retry_delay=0.5):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            tried_times = 0
+            while True:
+                try:
+                    return func(*args, **kwargs)
+                except AutoReconnect:
+                    tried_times += 1
+                    if tried_times > retry_limit:
+                        raise Exception("pymongo cannot reconnect successfully after {} retries.".format(retry_limit))
+                    time.sleep(retry_delay)
+
+        return wrapper
+
+    return decorator
 
 
 class MongDb(object):
@@ -34,49 +55,33 @@ class MongDb(object):
         self.log.info('释放mongodb资源')
         pass
 
-    def check_connected(self):
-        pass
-        # if not self.connected:
-        #     raise NameError('stat:connected Error')
-        # while True:
-        #     try:
-        #         if self.conn.is_mongos:
-        #             break
-        #
-        #         self.log.error('mongodb 连接异常, 等待连接正常...')
-        #         time.sleep(10)
-        #     except ServerSelectionTimeoutError as e:
-        #         self.log.error('mongodb 连接异常, 等待连接正常...')
-        #         self.log.exception(e)
-        #         time.sleep(10)
-
+    @auto_reconnect()
     def save(self, table, value):
         try:
-            self.check_connected()
             self.db[table].save(value)
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def insert(self, table, value):
         try:
-            self.check_connected()
             self.db[table].insert(value)
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def update(self, table, conditions, value, s_upsert=False, s_multi=False):
         try:
-            self.check_connected()
             self.db[table].update(conditions, value, upsert=s_upsert, multi=s_multi)
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def upsert(self, table, data):
         try:
-            self.check_connected()
             query = {'_id': data['_id']}
             if not self.db[table].find_one(query):
                 self.db[table].insert(data)
@@ -87,12 +92,12 @@ class MongDb(object):
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def find_and_modify(self, table, query=None, update=None,
                         upsert=False, sort=None, full_response=False,
                         manipulate=False, **kwargs):
         query = {} if query is None else query
         try:
-            self.check_connected()
             self.db[table].find_and_modify(query=query, update=update, upsert=upsert,
                                            sort=sort, full_response=full_response,
                                            manipulate=manipulate, **kwargs)
@@ -100,10 +105,10 @@ class MongDb(object):
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def traverse(self, table, where=None):
         cursor = None
         try:
-            self.check_connected()
             where = {} if where is None else where
             cursor = self.db[table].find(where, no_cursor_timeout=True)
             for item in cursor:
@@ -115,10 +120,10 @@ class MongDb(object):
             if cursor is not None:
                 cursor.close()
 
+    @auto_reconnect()
     def traverse_batch(self, table, where=None):
         cursor = None
         try:
-            self.check_connected()
             where = {} if where is None else where
             cursor = self.db[table].find(where, no_cursor_timeout=True).batch_size(500)
             for item in cursor:
@@ -131,10 +136,10 @@ class MongDb(object):
                 cursor.close()
                 self.log.info('关闭traverse_batch游标')
 
+    @auto_reconnect()
     def traverse_field(self, table, where, field):
         cursor = None
         try:
-            self.check_connected()
             where = {} if where is None else where
             cursor = self.db[table].find(where, field, no_cursor_timeout=True)
             for item in cursor:
@@ -146,9 +151,9 @@ class MongDb(object):
             if cursor is not None:
                 cursor.close()
 
+    @auto_reconnect()
     def select_field(self, table, where=None, field_list=None):
         try:
-            self.check_connected()
             where = {} if where is None else where
             field_list = [] if field_list is None else field_list
             return self.db[table].find(where, field_list)
@@ -156,35 +161,35 @@ class MongDb(object):
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def select(self, table, value=None):
         try:
-            self.check_connected()
             value = {} if value is None else value
             return self.db[table].find(value, no_cursor_timeout=True).batch_size(500)
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def select_colum(self, table, value, colum):
         try:
-            self.check_connected()
             return self.db[table].find(value, {colum: 1})
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def select_count(self, table, value=None):
         try:
-            self.check_connected()
             value = {} if value is None else value
             return self.db[table].find(value).count()
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def select_one(self, table, value):
         try:
-            self.check_connected()
             result = self.db[table].find(value).limit(1)  # fix-me to findOne function  find_one
             for item in result:
                 return item
@@ -193,9 +198,9 @@ class MongDb(object):
             raise e
         return None
 
+    @auto_reconnect()
     def select_limit(self, table, value, limit=500):
         try:
-            self.check_connected()
             result = self.db[table].find(value).limit(limit)  # fix-me to findOne function  find_one
             for item in result:
                 return item
@@ -204,9 +209,9 @@ class MongDb(object):
             raise e
         return None
 
+    @auto_reconnect()
     def select_one_field(self, table, value, field):
         try:
-            self.check_connected()
             result = self.db[table].find(value, field).limit(1)  # fix-me to findOne function  find_one
             for item in result:
                 return item
@@ -215,9 +220,9 @@ class MongDb(object):
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def find_one(self, table, query, field=None):
         try:
-            self.check_connected()
             if field is None:
                 return self.db[table].find_one(query)
             return self.db[table].find_one(query, field)
@@ -225,35 +230,35 @@ class MongDb(object):
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def select_sort(self, table, value, sort):
         try:
-            self.check_connected()
             return self.db[table].find(value).sort(sort)
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def delete(self, table, value):
         try:
-            self.check_connected()
             return self.db[table].remove(value)
         except Exception as e:
             self.log.exception(e)
             raise e
 
     # 删除数据库
+    @auto_reconnect()
     def drop(self, table):
         try:
-            self.check_connected()
             self.db[table].drop()
         except Exception as e:
             self.log.exception(e)
             raise e
 
     # index => [(index_colunm, pymongo.DESCENDING/pymongo.ASCENDING)]
+    @auto_reconnect()
     def create_index(self, table, index):
         try:
-            self.check_connected()
             # 后台建索引
             self.db[table].ensure_index(index, background=True)
         except Exception as e:
@@ -261,18 +266,18 @@ class MongDb(object):
             raise e
 
     # 删除索引
+    @auto_reconnect()
     def drop_indexes(self, table):
         try:
-            self.check_connected()
             # 后台建索引
             self.db[table].drop_indexes()
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def close_all_databases(self):
         try:
-            self.check_connected()
             admin = self.conn['admin']
             auth = admin.authenticate('admin', 'liveadmin')
             if auth:
@@ -282,19 +287,20 @@ class MongDb(object):
             raise e
         return None
 
+    @auto_reconnect()
     def insert_many(self, table, documents, ordered=True,
                     bypass_document_validation=False):
         try:
             if documents is None or len(documents) <= 0:
                 return
 
-            self.check_connected()
             self.db[table].insert_many(
                 documents=documents, ordered=ordered, bypass_document_validation=bypass_document_validation)
         except Exception as e:
             self.log.exception(e)
             raise e
 
+    @auto_reconnect()
     def insert_batch_data(self, table, data_list, is_order=False, insert=False):
         count = 0
         if data_list is None:
@@ -305,7 +311,6 @@ class MongDb(object):
             return count
 
         try:
-            self.check_connected()
             bulk = self.db[table].initialize_ordered_bulk_op() if is_order else self.db[
                 table].initialize_unordered_bulk_op()
             for item in data_list:
@@ -320,6 +325,6 @@ class MongDb(object):
             # self.log.info('insert_logs: {length}'.format(length=len(data_list)))
         except Exception as e:
             self.log.exception(e)
-            count = 0
+            raise e
 
         return count
