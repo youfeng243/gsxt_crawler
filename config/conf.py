@@ -46,7 +46,7 @@ remote_proxy_conf = {
 #     'port': 9300,
 # }
 
-NGINX_IP = '172.17.1.121'
+NGINX_IP = '172.17.1.117'
 
 # 滑动验证码破解服务
 captcha_geetest_conf = {
