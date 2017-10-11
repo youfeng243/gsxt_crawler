@@ -21,4 +21,4 @@ task/gsxt/gsxt_hunan_worker.pyc
 log/*.file
 /log/
 /logs/
-/config/proxies_200.txt
+!/config/proxies_200.txt

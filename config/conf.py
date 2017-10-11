@@ -8,24 +8,6 @@ mongo_db_target = {
     "password": 'haizhi',
 }
 
-# 新网页库
-# mongo_db_target_new = {
-#     "host": "172.16.215.2",
-#     "port": 40042,
-#     "db": "crawl_data",
-#     "username": "offline",
-#     "password": "offline",
-# }
-#
-# 新网页库
-# mongo_db_target_new = {
-#     "host": "172.17.1.119",
-#     "port": 40042,
-#     "db": "crawl_data_new",
-#     "username": None,
-#     "password": None,
-# }
-
 mongo_db_source = {
     'host': "172.17.1.119",
     'port': 40042,
@@ -33,18 +15,6 @@ mongo_db_source = {
     "username": 'work',
     "password": 'haizhi',
 }
-
-# 代理服务
-remote_proxy_conf = {
-    'host': '112.74.163.187',
-    'port': 9300,
-}
-
-# 新动态代理
-# remote_proxy_conf_new = {
-#     'host': '172.18.180.226',
-#     'port': 9300,
-# }
 
 NGINX_IP = '172.17.1.117'
 
@@ -80,6 +50,3 @@ report_mq_conf = {
     'port': 11400,
     'tube': 'online_schedule_report'
 }
-
-# 静态代理访问链接
-static_proxy_url = 'http://112.74.163.187:23128/__static__/proxies.txt'

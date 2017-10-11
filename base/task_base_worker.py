@@ -7,6 +7,7 @@
 @file: task_base_worker.py
 @time: 2016/12/7 16:17
 """
+import json
 import os
 import random
 import time
@@ -15,10 +16,10 @@ import requests
 from fake_useragent import UserAgent
 
 from common import util
-from common.global_resource import global_log, target_db, source_db, is_debug#, target_db_new
+from common.global_resource import global_log, target_db, source_db, is_debug  # , target_db_new
 from common.proxy_local import ProxyLocal
 from common.queue_mq_thread import MqQueueThread
-from config.conf import remote_proxy_conf, parse_mq_conf, report_mq_conf
+from config.conf import parse_mq_conf, report_mq_conf
 
 
 class TaskBaseWorker(object):
@@ -234,45 +235,7 @@ class TaskBaseWorker(object):
         self.report_proxy(session.proxies[self.ssl_type])
 
     def report_proxy(self, proxy):
-        if proxy is None:
-            self.log.warn('代理为None')
-            return
-
-        # # 如果是静态代理则不反馈
-        # if self.proxy_type == self.PROXY_TYPE_STATIC:
-        #     return
-
-        proxy_conf = remote_proxy_conf
-
-        try:
-            # if self.proxy_type == self.PROXY_TYPE_DYNAMIC:
-            #     proxy_conf = remote_proxy_conf
-            # # elif self.proxy_type == self.PROXY_TYPE_DYNAMIC_NEW:
-            # #     proxy_conf = remote_proxy_conf_new
-            # else:
-            #     self.log.warn('没有匹配到任何动态代理配置..')
-            #     return
-
-            bad_ip = proxy.split('@')[1]
-            if self.proxy_local.find_ip(bad_ip):
-                return
-
-            url = 'http://{host}:{port}/bad_proxy/{h}/{bad_ip}'.format(
-                h=self.host,
-                host=proxy_conf['host'],
-                port=proxy_conf['port'],
-                bad_ip=bad_ip
-            )
-            r = requests.get(url, timeout=2)
-            if r is None or r.status_code != 200:
-                self.log.warn('反馈动态代理失败: proxy = {proxy}'.format(proxy=proxy))
-                return
-        except Exception as e:
-            self.log.error('反馈动态代理失败: proxy = {proxy}'.format(proxy=proxy))
-            self.log.exception(e)
-            return
-
-        self.log.info('反馈失败代理成功: proxy = {proxy}'.format(proxy=proxy))
+        pass
 
     # 随机选择代理
     def get_random_proxy(self, host=None):
@@ -301,25 +264,34 @@ class TaskBaseWorker(object):
     #     proxies = {self.ssl_type: self.proxy_local.get_local_proxy()['socks5']}
     #     return proxies
 
-    def get_dynamic_proxy(self, host):
+    def get_dynamic_proxy(self, host=None):
 
+        proxy_url = 'http://101.132.128.78:18585/proxy'
+
+        user_config = {
+            'username': 'beihai',
+            'password': 'beihai',
+        }
         for _ in xrange(3):
+
             try:
-                r = requests.get('http://{host}:{port}/proxy/{h}'.format(
-                    h=host, host=remote_proxy_conf['host'], port=remote_proxy_conf['port']),
-                    timeout=10)
-                if r is None or r.status_code != 200 or 'failed' in r.text or 'False' in r.text:
-                    time.sleep(1)
-                    self.log.warn("动态代理服务异常, 重试...")
+                r = requests.post(proxy_url, json=user_config, timeout=10)
+                if r.status_code != 200:
+                    continue
+                json_data = json.loads(r.text)
+                is_success = json_data.get('success')
+                if not is_success:
                     continue
 
-                proxies = {self.ssl_type: 'http://{host}'.format(host=r.text)}
-                self.log.info('鲲鹏 ip = {ip}'.format(ip=r.text))
-                return proxies
+                proxy = json_data.get('proxy')
+                if proxy is None:
+                    continue
+
+                self.log.info("获取远程代理成功: proxy = {}".format(proxy))
+                return {self.ssl_type: proxy}
             except Exception as e:
-                self.log.error("动态代理访问异常:")
+                self.log.error('获取代理异常:')
                 self.log.exception(e)
-                time.sleep(1)
 
         proxy = self.proxy_local.get_local_proxy()['http']
         self.log.warn("获取动态代理失败, 暂时使用静态代理: {}".format(proxy))

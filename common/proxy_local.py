@@ -5,8 +5,6 @@ import time
 import requests
 import threadpool
 
-from config.conf import static_proxy_url
-
 
 def test_run_task(item, index, log):
     session = requests.session()
@@ -59,9 +57,6 @@ class ProxyLocal(object):
         # 加载代理信息
         ProxyLocal.load_steady_proxy(self.proxies_file, log=self.log)
 
-        if test:
-            ProxyLocal.test_steady_proxy(ProxyLocal.statis_proxy, self.log)
-
         # 加载代理信息
         self.proxy_list = [item for item in ProxyLocal.statis_proxy if item['status'] == 1]
         self.log.info('加载代理个数为: {length}'.format(length=len(self.proxy_list)))
@@ -90,52 +85,23 @@ class ProxyLocal(object):
 
         ProxyLocal.obj_count = 1
 
-        # 访问url获取最新的静态代理信息
-        try:
-            r = requests.get(static_proxy_url, timeout=10)
-            if r is None or r.status_code != 200:
-                raise Exception("代理更新异常...")
+        with open(proxies_file) as fp:
+            for line in fp:
+                line = line.strip().strip("\r").strip("\n")
+                if len(line) <= 0:
+                    continue
+                proxy = {'http': 'http://' + line, 'status': 1}
+                if '7777' in line:
+                    new_line = line.replace('7777', '55555')
+                    proxy['socks5'] = 'socks5://' + new_line
+                elif '8088' in line:
+                    new_line = line.replace('8088', '1088')
+                    proxy['socks5'] = 'socks5://' + new_line
+                else:
+                    proxy['socks5'] = 'http://' + line
+                    log.error('没有对应端口信息: {}'.format(line))
 
-            with open(proxies_file, "w") as p_write:
-                line_list = r.text.strip().split('\n')
-                for line in line_list:
-                    line = line.strip().strip("\r").strip("\n")
-                    if len(line) <= 0:
-                        continue
-                    proxy = {'http': 'http://' + line, 'status': 1}
-                    if '7777' in line:
-                        new_line = line.replace('7777', '55555')
-                        proxy['socks5'] = 'socks5://' + new_line
-                    elif '8088' in line:
-                        new_line = line.replace('8088', '1088')
-                        proxy['socks5'] = 'socks5://' + new_line
-                    else:
-                        proxy['socks5'] = 'http://' + line
-                        log.error('没有对应端口信息: {}'.format(line))
-
-                    ProxyLocal.statis_proxy.append(proxy)
-                    p_write.write(line + "\r\n")
-                log.info('从远端更新代理成功....')
-        except Exception as e:
-            log.error("从远端更新失败, 使用本地文件...")
-            log.exception(e)
-            with open(proxies_file) as fp:
-                for line in fp:
-                    line = line.strip().strip("\r").strip("\n")
-                    if len(line) <= 0:
-                        continue
-                    proxy = {'http': 'http://' + line, 'status': 1}
-                    if '7777' in line:
-                        new_line = line.replace('7777', '55555')
-                        proxy['socks5'] = 'socks5://' + new_line
-                    elif '8088' in line:
-                        new_line = line.replace('8088', '1088')
-                        proxy['socks5'] = 'socks5://' + new_line
-                    else:
-                        proxy['socks5'] = 'http://' + line
-                        log.error('没有对应端口信息: {}'.format(line))
-
-                    ProxyLocal.statis_proxy.append(proxy)
+                ProxyLocal.statis_proxy.append(proxy)
 
     def get_local_proxy(self):
 
