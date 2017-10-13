@@ -1,22 +1,23 @@
 # -*- coding:utf-8 -*-
 
 mongo_db_target = {
-    "host": "172.17.1.119",
+    "host": "Crawler-DataServer1",
     "port": 40042,
     "db": "crawl_data",
-    "username": 'work',
-    "password": 'haizhi',
+    "username": "work",
+    "password": "haizhi",
 }
 
 mongo_db_source = {
-    'host': "172.17.1.119",
+    'host': "Crawler-DataServer1",
     'port': 40042,
     'db': 'company_data',
-    "username": 'work',
-    "password": 'haizhi',
+    'username': 'work',
+    'password': 'haizhi'
 }
 
-NGINX_IP = '172.17.1.117'
+
+NGINX_IP = 'Crawler-Geetest_crack_test'
 
 # 滑动验证码破解服务
 captcha_geetest_conf = {
@@ -35,18 +36,18 @@ encry_zj_conf = {
 
 # 消息队列信息
 beanstalk_consumer_conf = {
-    'host': 'cs0.sz-internal.haizhi.com',
-    'port': 11400,
+    'host': 'Crawler-Downloader2',
+    'port': 11300,
 }
 # 解析消息队列
 parse_mq_conf = {
-    'host': 'cs0.sz-internal.haizhi.com',
-    'port': 11400,
+    'host': 'Crawler-Downloader2',
+    'port': 11300,
     'tube': 'online_gsxt_parse'
 }
 # 反馈消息队列
 report_mq_conf = {
-    'host': 'cs0.sz-internal.haizhi.com',
+    'host': 'Crawler-Downloader2',
     'port': 11400,
     'tube': 'online_schedule_report'
 }
