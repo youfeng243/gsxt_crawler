@@ -89,6 +89,9 @@ class TaskBaseWorker(object):
         else:
             self.retention_time = eval(self.retention_time)
 
+        # 扩展企业列表
+        self.extend_table = 'extend_company_list'
+
         self.parse_mq_conf = parse_mq_conf
         self.is_parse_mq_open = eval(kwargs.get('is_parse_mq_open', 'False'))
         self.report_mq_conf = report_mq_conf

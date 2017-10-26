@@ -354,6 +354,10 @@ class GsxtBaseWorker(TaskBaseWorker):
         self.source_db.insert_batch_data(self.source_table, seed_list)
         self.log.info("搜索出额外种子数目为: province = {} company = {} {}".format(
             self.province, company, len(seed_list)))
+
+        # 插入扩展企业表
+        self.source_db.insert_batch_data(self.extend_table, seed_list)
+
         return param_list, match_param
 
     # 获得加密后的pripid
